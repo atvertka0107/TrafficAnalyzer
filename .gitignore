@@ -1,3 +1,5 @@
 *.pcap
 *.csv
 packet_classifier
+.vscode
+venv
