@@ -1,5 +1,5 @@
 # How to build project:
-## Command for build
+## Command for build c++ application:
 1. cd application_1
 2. mkdir build
 3. cd build
