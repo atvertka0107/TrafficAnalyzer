@@ -4,17 +4,23 @@ import csv
 import argparse
 
 def main() -> None: 
-    if len(argv) != 3:
-        print('Usage: python main.py <input_file> <output_file>')
-        exit(1)
+    parser = argparse.ArgumentParser(
+        prog='application.py', 
+        description='Process network traffic statistics.',
+        usage='python application.py <input_file.csv> <output_file.csv>')
+    
+    parser.add_argument('input_file', help='PATH to the input CSV file')
+    parser.add_argument('output_file', help='PATH to the output CSV file')
+    args = parser.parse_args()
 
-    input_file = argv[1]
-    output_file = argv[2]
+    input_file = args.input_file
+    output_file = args.output_file
     ip_stats = defaultdict(lambda : {'packets_sent': 0, 'packets_received': 0, 'bytes_sent': 0, 'bytes_received': 0})
 
     try:
         with open(input_file, 'r') as file:
             reader = csv.reader(file)
+            next(reader)
             for row in reader:
                 if len(row) != 6:
                     print(f"Skipping invalid row: {row}")
