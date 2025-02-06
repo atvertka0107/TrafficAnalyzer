@@ -1,5 +1,4 @@
 from collections import defaultdict
-from sys import argv
 import csv
 import argparse
 
