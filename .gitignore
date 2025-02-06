@@ -1,6 +1,6 @@
 *.pcap
 *.csv
-packet_classifier
 .vscode
 venv
 build
+test_data
