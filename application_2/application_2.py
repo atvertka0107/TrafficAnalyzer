@@ -1,12 +1,13 @@
+#!/usr/bin/python3
 from collections import defaultdict
 import csv
 import argparse
 
 def main() -> None: 
     parser = argparse.ArgumentParser(
-        prog='application.py', 
+        prog='application_2.py', 
         description='Process network traffic statistics.',
-        usage='python application.py <input_file.csv> <output_file.csv>')
+        usage='python application_2.py <input_file.csv> <output_file.csv>')
     
     parser.add_argument('input_file', help='PATH to the input CSV file')
     parser.add_argument('output_file', help='PATH to the output CSV file')
